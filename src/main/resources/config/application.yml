@@ -1,0 +1,24 @@
+#my: 
+#  name: config-yml
+#  age: 12
+#  cup: B
+
+#数据源
+spring.datasource: 
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: root
+    
+server:
+  port: 9000
+  
+
+# slf4j日志配置
+logging:
+  # 配置级别
+  level:
+    #分包配置级别，即不同的目录下可以使用不同的级别
+    com.cyq: info
+  # 在不指定路径，只指定输出日志的文件名，默认输出至当前项目下
+  # 若指定，则会输出至指定目录下
+  file: springboot.log
