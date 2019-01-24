@@ -1,7 +1,13 @@
 package com.cyq.service;
 
+import java.util.List;
+
+import com.cyq.entity.Goods;
+
 public interface GoodsService {
 	
-	int updateStock(Long id);
+	List<Goods> getAll();
+	
+	int updateStock(Long id, int stock);
 
 }
