@@ -2,12 +2,15 @@ package com.cyq.entity;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotBlank;
+
 public class Order {
 	
 	private Long id;
 	
 	private String orderNum;
 	
+	@NotBlank
 	private Long goodsId;
 	
 	private Date createTime;

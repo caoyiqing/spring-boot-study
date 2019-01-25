@@ -30,7 +30,7 @@ public class SpringBootTest1 {
         logger.info("这是一个info日志...");
         logger.warn("这是一个warn日志...");
         logger.error("这是一个error日志...");
-		Map<String, Object> user = userService.getUser("1");
+		Map<String, Object> user = userService.getUserById("1");
 		System.out.println(user);
 	}
 
