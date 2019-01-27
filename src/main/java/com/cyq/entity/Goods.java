@@ -2,6 +2,8 @@ package com.cyq.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Goods {
 	
 	private Long id;
@@ -14,8 +16,10 @@ public class Goods {
 	
 	private int stock;
 	
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss") 
 	private Date updateTime;
 	
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss") 
 	private Date createTime;
 
 	public Long getId() {

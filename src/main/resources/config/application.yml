@@ -12,6 +12,13 @@ spring.datasource:
 mybatis:
   typeAliasesPackage: com.cyq.entity
   mapperLocations: classpath:mapper/*.xml
+  
+# 分页配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSq
    
 server:
   port: 9000

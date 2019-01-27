@@ -25,5 +25,9 @@
 			VALUES
 				(#{orderNum}, #{goodsId})
     </insert>
-
+    
+    <select id="getOrderByOrderNum" resultMap="BaseResultMap">
+       SELECT <include refid="Base_Column_List" /> FROM t_order WHERE order_num = #{orderNum}
+    </select>
+    
 </mapper>

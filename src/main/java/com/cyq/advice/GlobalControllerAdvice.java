@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cyq.exception.CustomException;
 import com.cyq.response.Response;
 import com.cyq.response.ResponseCode;
 
@@ -16,8 +17,17 @@ public class GlobalControllerAdvice {
 	@ResponseBody
     public Response<Object> exceptionHandler(HttpServletRequest request, Exception e) {
 		Response<Object> response = new Response<>();
-//		response.setCode(ResponseCode.SUCCESS);
+		response.setCode(ResponseCode.EXCEPTION.getCode());
 		response.setMsg(e.toString());
+        return response;
+    }
+	
+	@ExceptionHandler(value = CustomException.class)
+	@ResponseBody
+    public Response<Object> customExceptionHandler(HttpServletRequest request, CustomException e) {
+		Response<Object> response = new Response<>();
+		response.setCode(e.getCode());
+		response.setMsg(e.getMsg());
         return response;
     }
 	

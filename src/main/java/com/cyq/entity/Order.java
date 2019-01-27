@@ -2,7 +2,7 @@ package com.cyq.entity;
 
 import java.util.Date;
 
-import javax.validation.constraints.NotBlank;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class Order {
 	
@@ -10,9 +10,9 @@ public class Order {
 	
 	private String orderNum;
 	
-	@NotBlank
 	private Long goodsId;
 	
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss") 
 	private Date createTime;
 
 	public Long getId() {
