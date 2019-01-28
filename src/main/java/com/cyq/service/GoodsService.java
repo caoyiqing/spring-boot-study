@@ -6,6 +6,8 @@ import com.cyq.entity.Goods;
 
 public interface GoodsService {
 	
+	int addGoods(Goods goods);
+	
 	List<Goods> getAll();
 	
 	int updateStock(Long id, int stock);

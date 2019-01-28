@@ -18,6 +18,20 @@
         id, goods_name, goods_desc, money, stock, update_time, create_time
     </sql>
     
+    <insert id="addGoods" parameterType="com.cyq.entity.Goods">
+       INSERT INTO t_goods (
+			goods_name,
+			goods_desc,
+			money,
+			stock
+		)
+		VALUES
+			(#{goodsName},
+			 #{goodsDesc},
+			 #{money},
+			 #{stock})
+    </insert> 
+    
     <!-- 查询商品列表 -->
     <select id="getAllGoods" resultMap="BaseResultMap">
        SELECT <include refid="Base_Column_List" /> FROM t_goods

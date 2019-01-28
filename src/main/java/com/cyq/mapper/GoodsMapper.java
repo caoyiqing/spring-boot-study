@@ -14,4 +14,6 @@ public interface GoodsMapper {
 
 	int updateStock(@Param("id") Long id, @Param("stock") int stock);
 
+	int addGoods(Goods goods);
+
 }

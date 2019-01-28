@@ -2,18 +2,28 @@ package com.cyq.entity;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class Goods {
 	
+	public interface Default{}
+	
+	public interface Update{}
+	
+	@NotNull(message = "货物ID不能为空" , groups = Update.class)
 	private Long id;
 	
+	@NotNull(message = "货物名称不能为空" , groups = Default.class)
 	private String goodsName;
 	
 	private String goodsDesc;
 	
+	@NotNull(message = "货物金额不能为空" , groups = Default.class)
 	private Long money;
 	
+	@NotNull(message = "货物库存不能为空" , groups = Default.class)
 	private int stock;
 	
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss") 

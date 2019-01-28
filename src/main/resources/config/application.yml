@@ -33,3 +33,20 @@ logging:
   # 在不指定路径，只指定输出日志的文件名，默认输出至当前项目下
   # 若指定，则会输出至指定目录下
   file: springboot.log
+  
+# actuator监控
+info:
+  head: head
+  body: body
+management:
+  endpoints:
+    web:
+      exposure:
+        #加载所有的端点，默认只加载了info、health
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    #可以关闭指定的端点
+    shutdown:
+      enabled: false

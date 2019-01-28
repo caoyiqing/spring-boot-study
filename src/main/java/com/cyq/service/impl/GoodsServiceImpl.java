@@ -14,6 +14,11 @@ public class GoodsServiceImpl implements GoodsService {
 	
 	@Autowired
 	private GoodsMapper goodsMapper;
+	
+	@Override
+	public int addGoods(Goods goods) {
+		return goodsMapper.addGoods(goods);
+	}
 
 	@Override
 	public List<Goods> getAll() {
