@@ -22,10 +22,7 @@ public class GlobalControllerAdvice {
 	@ExceptionHandler(value = Exception.class)
 	@ResponseBody
     public Response<Object> exceptionHandler(HttpServletRequest request, Exception e) {
-		Response<Object> response = new Response<>();
-		response.setCode(ResponseCode.EXCEPTION.getCode());
-		response.setMsg(e.toString());
-        return response;
+		return new Response<>(ResponseCode.EXCEPTION.getCode(), e.toString());
     }
 	
 	/**
@@ -37,6 +34,7 @@ public class GlobalControllerAdvice {
 	* @return Response<Object>    返回类型
 	 */
 	@ExceptionHandler(value = MethodArgumentNotValidException.class)
+	@ResponseBody
 	public Response<Object> methodArgumentNotValidExceptionHandler(HttpServletRequest request,
 			MethodArgumentNotValidException exception) {
 		BindingResult result = exception.getBindingResult();
@@ -58,6 +56,7 @@ public class GlobalControllerAdvice {
 	* @return Response<Object>    返回类型
 	 */
 	@ExceptionHandler(value = ConstraintViolationException.class)
+	@ResponseBody
 	public Response<Object> constraintViolationExceptionHandler(HttpServletRequest request,
 			ConstraintViolationException exception) {
 		return new Response<>(ResponseCode.EXCEPTION.getCode(), exception.getMessage());
@@ -66,10 +65,7 @@ public class GlobalControllerAdvice {
 	@ExceptionHandler(value = CustomException.class)
 	@ResponseBody
     public Response<Object> customExceptionHandler(HttpServletRequest request, CustomException e) {
-		Response<Object> response = new Response<>();
-		response.setCode(e.getCode());
-		response.setMsg(e.getMsg());
-        return response;
+		return new Response<>(e.getCode(), e.getMsg());
     }
 	
 //	@ExceptionHandler(value = Exception.class)

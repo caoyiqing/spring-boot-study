@@ -29,7 +29,7 @@ public class OrderController {
 	private OrderService orderService;
 	
 	@ApiOperation(value="新增订单", notes="新增订单")
-	@ApiImplicitParam(name = "goodsId", value = "货物ID", required = true, dataType = "Long")
+	@ApiImplicitParam(name = "goodsId", value = "货物ID", dataType = "Long")
 	@PostMapping("/addOrder")
 	public Object addOrder(@NotNull(message = "货物ID不能为空") @RequestParam Long goodsId) {
 		Order order = new Order();
