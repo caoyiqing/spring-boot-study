@@ -29,6 +29,7 @@ public class Response<T> implements Serializable {
 		this.data = data;
 		this.code = ResponseCode.SUCCESS.getCode();
 		this.msg = ResponseCode.SUCCESS.getMessage();
+		this.status = true;
 	}
 	
 	public Response(Integer code, String msg) {
@@ -66,4 +67,12 @@ public class Response<T> implements Serializable {
 		this.msg = msg;
 	}
 
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	
 }

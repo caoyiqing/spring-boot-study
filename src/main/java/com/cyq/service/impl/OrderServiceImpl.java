@@ -26,7 +26,7 @@ public class OrderServiceImpl implements OrderService {
 	public int addOrder(Order order) {
 		goodsService.updateStock(order.getGoodsId(), -1);
 		// 发生异常，使之回滚
-//		int i = 1 / 0;
+		int i = 1 / 0;
 		return orderMapper.addOrder(order);
 	}
 
