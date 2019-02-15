@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
  * @author admin
  *
  */
-@Component
-@EnableScheduling
+//@Component
+//@EnableScheduling
 public class QuartzTask {
 
 	/**
