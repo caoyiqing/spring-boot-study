@@ -14,6 +14,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class Swagger2 {
+	
+	// http://localhost:9000/swagger-ui.html#
 
 	// swagger2的配置文件，这里可以配置swagger2的一些基本的内容，比如扫描的包等等
 	@Bean
